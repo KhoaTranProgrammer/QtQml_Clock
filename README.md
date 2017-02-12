@@ -1,3 +1,5 @@
 # QtQml Clock Example
 
-This Clock example is written by Qt QML language on Qt 5.8
+Demonstration video: https://www.youtube.com/watch?v=p9rDLmGt5Co
+
+In this example, we use basic controls of Qt QML such as: Item, Rectangle, Timer, Repeater, Text
