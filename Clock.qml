@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
 Item {
-    id: id_clock
+    id: id_root
 
     property color color: "#F4FF81"
 
@@ -16,17 +16,17 @@ Item {
         interval: 1000
         running: true
 
-        onTriggered: clock.currentDate = new Date()
+        onTriggered: id_root.currentDate = new Date()
     }
 
     Rectangle {
         id: id_plate
 
         anchors.centerIn: parent
-        height: Math.min(clock.width, clock.height)
+        height: Math.min(id_root.width, id_root.height)
         width: height
         radius: width/2
-        color: id_clock.color
+        color: id_root.color
         border.color: "gold"
         border.width: 4
 
@@ -84,7 +84,7 @@ Item {
             bottom: id_plate.bottom
             horizontalCenter: parent.horizontalCenter
         }
-        value: clock.seconds
+        value: id_root.seconds
     }
 
     MinuteNeedle {
@@ -93,7 +93,7 @@ Item {
             bottom: id_plate.bottom
             horizontalCenter: parent.horizontalCenter
         }
-        value: clock.minutes
+        value: id_root.minutes
     }
 
     HourNeedle {
@@ -102,7 +102,7 @@ Item {
             bottom: id_plate.bottom
             horizontalCenter: parent.horizontalCenter
         }
-        value: clock.hours
-        valueminute: clock.minutes
+        value: id_root.hours
+        valueminute: id_root.minutes
     }
 }
